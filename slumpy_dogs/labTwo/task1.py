@@ -10,10 +10,6 @@ def matrixTranspose(matrix):
             matrixNew[i][j] = matrix[j][i]
     return matrixNew
 
-m = [[1, 2, 3], [4, 5, 6]]
-n = matrixTranspose(m)
-print(n)
-
 # принимает матрицу, возвращает матрицу
 def matrixMultiplicate(matrixOne, matrixTwo):
 
