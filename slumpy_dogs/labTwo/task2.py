@@ -7,13 +7,14 @@ def isInt(string):
             return False
 
 def matrixInput():
-    print('Введите размер матрицы:')
+    print('-------------ВВОД РАЗМЕРА МАТРИЦЫ-------------\n')
     print('Введите число строк:')
     while True:
         rows = input()
         if not(isInt):
             print("Ошибка ввода, попробуйте еще раз")
         else:
+            rows = int(rows)
             break
     print('Введите число столбцов:')
     while True:
@@ -21,7 +22,16 @@ def matrixInput():
         if not(isInt):
             print("Ошибка ввода, попробуйте еще раз")
         else:
+            columns = int(columns)
             break
+    matrix = []
+    for i in range(columns):
+        matrix.append([0]*rows)
+    print('Введите все числа матрицы через ENTER:')
+    for i in range(columns):
+        for j in range(rows):
+            matrix[i][j] = int(input())
+    return matrix
 
 print("0 - выход из программы")
 print("1 - транспонирование")
@@ -43,7 +53,7 @@ while IsNotExit:
             IsNotExit = False
             print("\nВы вышли из программы")
         case 1:
-            matrixOne = [[1, 2, 3], [4, 5, 6]]
+            matrixOne = matrixInput()
             transposedMatrix = np.transpose(matrixOne)
             print('Транспонированная матрица:\n', transposedMatrix)
         case 2:
