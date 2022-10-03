@@ -1,6 +1,23 @@
 import numpy as np
 import timeit
 
+def isInt(string):
+    try:
+        newString = int(string)
+        return True
+    except ValueError:
+        return False
+
+def matrixInput():
+    print('\n-------------РАЗМЕР МАТРИЦЫ 3х3-------------\n')
+    matrix = []
+    for i in range(3):
+        matrix.append([0] * 3)
+    print('Введите все числа матрицы через ENTER:')
+    for i in range(3):
+        for j in range(3):
+            matrix[i][j] = int(input())
+    return matrix
 def matrixOutput(matrix):
     rows = len(matrix)
     columns = len(matrix[0])
@@ -45,13 +62,6 @@ def findInverseMatrix(matrix):
 
     return returnMatrix
 
-def IsNotString(string):
-    try:
-        newString = int(string)
-        return True
-    except ValueError:
-        return False
-
 
 print("0 - выход из программы")
 print("1 - нахождение обратной матрицы")
@@ -62,7 +72,7 @@ while IsNotExit:
     while True:
         print("\nВведите номер необходимой команды: ")
         operator = input()
-        if IsNotString(operator):
+        if isInt(operator):
             chooseYourCommand = int(operator)
             if chooseYourCommand in operations:
                 break
@@ -72,11 +82,13 @@ while IsNotExit:
             IsNotExit = False
             print("\nВы вышли из программы")
         case 1:
-            a = [[4, 3, 2], [2, 1, -1], [3, 3, 2]]
-            b = findInverseMatrix(a)
-            matrixOutput(b)
+            print('Введите матрицу:\n')
+            matrix = matrixInput()
+            inverseMatrix = findInverseMatrix(matrix)
+            matrixOutput(inverseMatrix)
         case 2:
-            matrix = [[4, 3, 2], [2, 1, -1], [3, 3, 2]]
+            print('Введите матрицу:\n')
+            matrix = matrixInput()
 
             startTime = timeit.default_timer()
             np.linalg.inv(matrix)
