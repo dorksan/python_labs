@@ -1,6 +1,12 @@
 import numpy as np
 import timeit
 
+def matrixOutput(matrix):
+    rows = len(matrix)
+    columns = len(matrix[0])
+    for i in range(rows):
+        print(matrix[i])
+
 # принимает матрицу, возвращает матрицу(пустую, в случае ошибки)
 def findInverseMatrix(matrix):
     numOfRows = len(matrix)
@@ -68,7 +74,7 @@ while IsNotExit:
         case 1:
             a = [[4, 3, 2], [2, 1, -1], [3, 3, 2]]
             b = findInverseMatrix(a)
-            print(b)
+            matrixOutput(b)
         case 2:
             matrix = [[4, 3, 2], [2, 1, -1], [3, 3, 2]]
 
