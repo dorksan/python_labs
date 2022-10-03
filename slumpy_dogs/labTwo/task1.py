@@ -33,14 +33,23 @@ def matrixInput():
     return matrix
 def matrixOutput(matrix):
     rows = len(matrix)
+    if rows < 1:
+        print("[]")
+        return
     columns = len(matrix[0])
     for i in range(rows):
         print(matrix[i])
 
 # принимает матрицу, возвращает матрицу
 def transposeMatrix(matrix):
-    rows = len(matrix[0])
     columns = len(matrix)
+    if columns < 1:
+        return []
+
+    rows = len(matrix[0])
+    if rows < 1:
+        return []
+
     matrixNew = []
     for i in range(rows):
         matrixNew.append([0]*columns)
@@ -49,10 +58,21 @@ def transposeMatrix(matrix):
             matrixNew[i][j] = matrix[j][i]
     return matrixNew
 
-# принимает матрицу, возвращает матрицу (возвращает пустую матрицу в случае ошибки, число при умножении строки на столбец)
+# принимает матрицу, возвращает матрицу (возвращает пустую матрицу в случае ошибки)
 def multiplicateMatrix(matrixOne, matrixTwo):
-    numOfRowsTwo = len(matrixTwo)
+    numOfRowsOne = len(matrixOne)
+    if numOfRowsOne < 1:
+        return []
     numOfColumnsOne = len(matrixOne[0])
+    if  numOfColumnsOne < 1:
+        return []
+
+    numOfRowsTwo = len(matrixTwo)
+    if numOfRowsTwo < 1:
+        return []
+    numOfColumnsTwo = len(matrixTwo[0])
+    if numOfColumnsTwo < 1:
+        return []
 
     if numOfColumnsOne != numOfRowsTwo:
         return []
@@ -67,7 +87,7 @@ def multiplicateMatrix(matrixOne, matrixTwo):
         returnValue = 0
         for i in range(numOfColumnsOne):
             returnValue += matrixOne[0][i] * matrixTwo[i][0]
-        return  returnValue
+        return [[returnValue]]
 
     returnMatrix = []
     for i in range(numOfRowsOne):
@@ -82,7 +102,11 @@ def multiplicateMatrix(matrixOne, matrixTwo):
 # принимает матрицу, возвращает число( -1 в случае ошибки)
 def determineRankOfMatrix(matrix):
     numOfRows = len(matrix)
+    if numOfRows < 1:
+        return -1
     numOfColumns = len(matrix[0])
+    if numOfColumns < 1:
+        return -1
 
     if numOfColumns != numOfRows or numOfRows > 3 or numOfColumns < 2:
         return -1

@@ -20,6 +20,9 @@ def matrixInput():
     return matrix
 def matrixOutput(matrix):
     rows = len(matrix)
+    if rows < 1:
+        print("Обратной матрицы не существует")
+        return
     columns = len(matrix[0])
     for i in range(rows):
         print(matrix[i])
