@@ -1,3 +1,9 @@
+def matrixOutput(matrix):
+    rows = len(matrix)
+    columns = len(matrix[0])
+    for i in range(rows):
+        print(matrix[i])
+
 # принимает матрицу, возвращает матрицу
 def transposeMatrix(matrix):
     rows = len(matrix[0])
