@@ -81,5 +81,5 @@ def determineRankOfMatrix(matrix):
         for j in range(numOfColumns):
             if matrix[i][j] != 0:
                 return 1
-
+            
     return 0

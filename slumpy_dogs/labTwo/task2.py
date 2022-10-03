@@ -7,7 +7,7 @@ def isInt(string):
             return False
 
 def matrixInput():
-    print('-------------ВВОД РАЗМЕРА МАТРИЦЫ-------------\n')
+    print('\n-------------ВВОД РАЗМЕРА МАТРИЦЫ-------------\n')
     print('Введите число строк:')
     while True:
         rows = input()
@@ -55,15 +55,15 @@ while IsNotExit:
         case 1:
             matrixOne = matrixInput()
             transposedMatrix = np.transpose(matrixOne)
-            print('Транспонированная матрица:\n', transposedMatrix)
+            print('\nТранспонированная матрица:\n', transposedMatrix)
         case 2:
             print('Введите первую матрицу:\n')
             matrixOne = matrixInput()
             print('Введите вторую матрицу:\n')
             matrixTwo = matrixInput()
             multiplicatedMatrix = np.dot(matrixOne, matrixTwo)
-            print('Результат умножения:\n', multiplicatedMatrix)
+            print('\nРезультат умножения:\n', multiplicatedMatrix)
         case 3:
             matrixOne = matrixInput()
             rank = np.linalg.matrix_rank(matrixOne)
-            print('Ранг матрицы:', rank)
+            print('\nРанг матрицы:', rank)
