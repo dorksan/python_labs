@@ -57,9 +57,13 @@ while IsNotExit:
             transposedMatrix = np.transpose(matrixOne)
             print('Транспонированная матрица:\n', transposedMatrix)
         case 2:
-            matrixTwo = [[6, 5], [1, 8], [7, 5]]
+            print('Введите первую матрицу:')
+            matrixOne = matrixInput()
+            print('Введите вторую матрицу:')
+            matrixTwo = matrixInput()
             multiplicatedMatrix = np.dot(matrixOne, matrixTwo)
             print('Результат умножения:\n', multiplicatedMatrix)
         case 3:
+            matrixOne = matrixInput()
             rank = np.linalg.matrix_rank(matrixOne)
             print('Ранг матрицы:', rank)
