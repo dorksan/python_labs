@@ -1,10 +1,27 @@
 import numpy as np
-def IsNotString(string):
+def isInt(string):
       try:
             newString = int(string)
             return True
       except ValueError:
             return False
+
+def matrixInput():
+    print('Введите размер матрицы:')
+    print('Введите число строк:')
+    while True:
+        rows = input()
+        if not(isInt):
+            print("Ошибка ввода, попробуйте еще раз")
+        else:
+            break
+    print('Введите число столбцов:')
+    while True:
+        columns = input()
+        if not(isInt):
+            print("Ошибка ввода, попробуйте еще раз")
+        else:
+            break
 
 print("0 - выход из программы")
 print("1 - транспонирование")
@@ -16,7 +33,7 @@ while IsNotExit:
     while True:
         print("\nВведите номер необходимой команды: ")
         operator = input()
-        if IsNotString(operator):
+        if isInt(operator):
             chooseYourCommand = int(operator)
             if chooseYourCommand in operations:
                 break
@@ -24,7 +41,7 @@ while IsNotExit:
     match chooseYourCommand:
         case 0:
             IsNotExit = False
-            print("\nВы вышли из калькулятора")
+            print("\nВы вышли из программы")
         case 1:
             matrixOne = [[1, 2, 3], [4, 5, 6]]
             transposedMatrix = np.transpose(matrixOne)
