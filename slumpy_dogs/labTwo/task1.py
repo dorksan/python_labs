@@ -40,5 +40,46 @@ def multiplicateMatrix(matrixOne, matrixTwo):
                 returnMatrix[i][j] += matrixOne[i][k] * matrixTwo[k][j]
     return returnMatrix
 
-# принимает матрицу, возвращает число
+# принимает матрицу, возвращает число( -1 в случае ошибки)
 def determineRankOfMatrix(matrix):
+    numOfRows = len(matrix)
+    numOfColumns = len(matrix[0])
+
+    if numOfColumns != numOfRows or numOfRows > 3 or numOfColumns < 2:
+        return -1
+
+    if numOfRows == 2:
+        if matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0] != 0:
+            return 2
+        for i in range(2):
+            for j in range(2):
+                if matrix[i][j] != 0:
+                    return 1
+
+        return 0
+
+    if matrix[0][0] * matrix[1][1] * matrix[2][2] \
+    + matrix[0][1] * matrix[1][2] * matrix[2][0] \
+    + matrix[0][2] * matrix[2][1] * matrix[1][0] \
+    - matrix[0][2] * matrix[1][1] * matrix[2][0] \
+    - matrix[0][1] * matrix[2][2] * matrix[1][0] \
+    - matrix[0][0] * matrix[1][2] * matrix[2][1] != 0:
+        return 3
+
+    if matrix[1][1] * matrix[2][2] - matrix[1][2] * matrix[2][1] != 0 or \
+    matrix[0][1] * matrix[2][2] - matrix[0][2] * matrix[2][1] != 0 or \
+    matrix[0][1] * matrix[1][2] - matrix[0][2] * matrix[1][1] != 0 or \
+    matrix[1][0] * matrix[2][2] - matrix[1][2] * matrix[2][0] != 0 or \
+    matrix[0][0] * matrix[2][2] - matrix[0][2] * matrix[2][0] != 0 or \
+    matrix[0][0] * matrix[1][2] - matrix[0][2] * matrix[1][0] != 0 or \
+    matrix[1][0] * matrix[2][1] - matrix[1][1] * matrix[2][0] != 0 or \
+    matrix[0][0] * matrix[2][1] - matrix[0][1] * matrix[2][0] != 0 or \
+    matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0] != 0:
+        return 2
+
+    for i in range(numOfRows):
+        for j in range(numOfColumns):
+            if matrix[i][j] != 0:
+                return 1
+
+    return 0
