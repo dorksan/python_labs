@@ -25,11 +25,11 @@ def matrixInput():
             columns = int(columns)
             break
     matrix = []
-    for i in range(columns):
-        matrix.append([0]*rows)
+    for i in range(rows):
+        matrix.append([0]*columns)
     print('Введите все числа матрицы через ENTER:')
-    for i in range(columns):
-        for j in range(rows):
+    for i in range(rows):
+        for j in range(columns):
             matrix[i][j] = int(input())
     return matrix
 
@@ -57,9 +57,9 @@ while IsNotExit:
             transposedMatrix = np.transpose(matrixOne)
             print('Транспонированная матрица:\n', transposedMatrix)
         case 2:
-            print('Введите первую матрицу:')
+            print('Введите первую матрицу:\n')
             matrixOne = matrixInput()
-            print('Введите вторую матрицу:')
+            print('Введите вторую матрицу:\n')
             matrixTwo = matrixInput()
             multiplicatedMatrix = np.dot(matrixOne, matrixTwo)
             print('Результат умножения:\n', multiplicatedMatrix)
