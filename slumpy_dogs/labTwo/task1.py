@@ -1,5 +1,5 @@
 # принимает матрицу, возвращает матрицу
-def matrixTranspose(matrix):
+def transposeMatrix(matrix):
     rows = len(matrix[0])
     columns = len(matrix)
     matrixNew = []
