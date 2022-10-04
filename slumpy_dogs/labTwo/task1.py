@@ -83,12 +83,6 @@ def multiplicateMatrix(matrixOne, matrixTwo):
     if numOfRowsOne < 1 or numOfColumnsOne < 1 or numOfRowsTwo < 1 or numOfColumnsTwo < 1:
         return []
 
-    if numOfRowsOne == 1 and numOfColumnsTwo == 1:
-        returnValue = 0
-        for i in range(numOfColumnsOne):
-            returnValue += matrixOne[0][i] * matrixTwo[i][0]
-        return [[returnValue]]
-
     returnMatrix = []
     for i in range(numOfRowsOne):
         returnMatrix.append([0] * numOfColumnsTwo)
