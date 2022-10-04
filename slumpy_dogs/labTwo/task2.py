@@ -32,7 +32,7 @@ def matrixInput():
                 break
     matrix = []
     for i in range(rows):
-        matrix.append([0] * columns)
+        matrix.append([0]*columns)
     print('Введите все числа матрицы через ENTER:')
     for i in range(rows):
         for j in range(columns):
