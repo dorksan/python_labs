@@ -11,22 +11,28 @@ def matrixInput():
     print('Введите число строк:')
     while True:
         rows = input()
-        if not(isInt):
+        if not (isInt(rows)):
             print("Ошибка ввода, попробуйте еще раз")
         else:
             rows = int(rows)
-            break
+            if rows < 1:
+                print("Ошибка ввода, попробуйте еще раз")
+            else:
+                break
     print('Введите число столбцов:')
     while True:
         columns = input()
-        if not(isInt):
+        if not (isInt(columns)):
             print("Ошибка ввода, попробуйте еще раз")
         else:
             columns = int(columns)
-            break
+            if columns < 1:
+                print("Ошибка ввода, попробуйте еще раз")
+            else:
+                break
     matrix = []
     for i in range(rows):
-        matrix.append([0]*columns)
+        matrix.append([0] * columns)
     print('Введите все числа матрицы через ENTER:')
     for i in range(rows):
         for j in range(columns):
