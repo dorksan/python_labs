@@ -42,7 +42,6 @@ def matrixOutput(matrix):
     if rows < 1:
         print("[]")
         return
-    columns = len(matrix[0])
     for i in range(rows):
         print(matrix[i])
 
@@ -70,7 +69,7 @@ def multiplicateMatrix(matrixOne, matrixTwo):
     if numOfRowsOne < 1:
         return []
     numOfColumnsOne = len(matrixOne[0])
-    if  numOfColumnsOne < 1:
+    if numOfColumnsOne < 1:
         return []
 
     numOfRowsTwo = len(matrixTwo)
@@ -81,12 +80,6 @@ def multiplicateMatrix(matrixOne, matrixTwo):
         return []
 
     if numOfColumnsOne != numOfRowsTwo:
-        return []
-
-    numOfRowsOne = len(matrixOne)
-    numOfColumnsTwo = len(matrixTwo[0])
-
-    if numOfRowsOne < 1 or numOfColumnsOne < 1 or numOfRowsTwo < 1 or numOfColumnsTwo < 1:
         return []
 
     returnMatrix = []

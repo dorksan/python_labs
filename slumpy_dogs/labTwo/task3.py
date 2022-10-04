@@ -23,14 +23,18 @@ def matrixOutput(matrix):
     if rows < 1:
         print("Обратной матрицы не существует")
         return
-    columns = len(matrix[0])
     for i in range(rows):
         print(matrix[i])
 
 # принимает матрицу, возвращает матрицу(пустую, в случае ошибки)
 def findInverseMatrix(matrix):
     numOfRows = len(matrix)
+    if numOfRows < 1:
+        return []
+
     numOfColumns = len(matrix[0])
+    if numOfColumns < 1:
+        return []
 
     if numOfColumns != 3 and numOfRows != 3:
         return []
@@ -58,10 +62,9 @@ def findInverseMatrix(matrix):
     returnMatrix[2][1] = -1 * (matrix[0][0] * matrix[2][1] - matrix[0][1] * matrix[2][0])
     returnMatrix[2][2] = matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
 
-    intermediateValue = 1 / matrixDeterminator
     for i in range(3):
         for j in range(3):
-            returnMatrix[i][j] *= intermediateValue
+            returnMatrix[i][j] /= matrixDeterminator
 
     return returnMatrix
 
