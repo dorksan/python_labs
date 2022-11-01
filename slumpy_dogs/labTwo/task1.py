@@ -37,6 +37,7 @@ def matrixInput():
         for j in range(columns):
             matrix[i][j] = int(input())
     return matrix
+
 def matrixOutput(matrix):
     rows = len(matrix)
     if rows < 1:
