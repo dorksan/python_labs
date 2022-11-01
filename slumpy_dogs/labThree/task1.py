@@ -1,15 +1,13 @@
 def buble_sort(array):
     j = 1
     while True:
-        f = 0
-        for i in range (len(array) - j):
+        for i in range(len(array) - j):
             if array[i] > array[i + 1]:
                 array[i] += array[i + 1]
                 array[i + 1] = array[i] - array[i + 1]
                 array[i] = array[i] - array[i + 1]
-                f += 1
         j += 1
-        if f == 0:
+        if len(array) - j == 0:
             break
     return  array
 
