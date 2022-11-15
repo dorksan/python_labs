@@ -11,8 +11,8 @@ def buble_sort(array):
         j += 1
         if len(array) - j == 0 or f == 0:
             break
-    return  array
+    return
 
 array = [9, 8, 7, 6, 5, 4, 3, 2, 1]
-array = buble_sort(array)
+buble_sort(array)
 print(array)
