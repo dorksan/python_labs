@@ -15,12 +15,11 @@ def Onlogn(n):
     return x
 
 def OnF(n):
-    x = 0
-    z = 1
-    for i in range(1, n + 1):
-        z *= i
-    for i in range(z):
-        x = x + 1
+    x = n
+    if n == 0:
+        return 1
+    for i range(n):
+        x = n * OnF(n-1)
     return x
 
 def On3(n):
