@@ -8,10 +8,9 @@ def O3n(n):
 def Onlogn(n):
     x = 0
     for i in range(n):
-        j = int(n / 2)
+        j = n
         while j >= 1:
-            for k in range(j):
-                x = x + 1
+            x = x + 1
             j = int(j / 2)
     return x
 
@@ -35,11 +34,8 @@ def On3(n):
 def O3logn(n):
     x = 0
     for i in range(3):
-        j = int(n / 2)
+        j = n
         while j >= 1:
-            for k in range(j):
-                x = x + 1
+            x = x + 1
             j = int(j / 2)
     return x
-
-
