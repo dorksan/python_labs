@@ -61,7 +61,7 @@ for i in range(len(visa_list)):
     b += (visa_list[i] - mathematical_expectation_visa) * (visa_list[i] - mathematical_expectation_visa)
     c += (mastercard_list[i] - mathematical_expectation_mastercard) * (mastercard_list[i] - mathematical_expectation_mastercard)
 r = a/((b*c)**0.5)
-print('Коэффицент корреляции Пирсона =', r)
+print('Коэффициент корреляции Пирсона =', r)
 print('-' * len(visa_list) * 7)
 visa_list_one = []
 mastercard_list_one = []
