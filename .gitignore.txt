@@ -1,0 +1,2 @@
+slumpy_dogs/*/.idea
+slumpy_dogs/*/venv
