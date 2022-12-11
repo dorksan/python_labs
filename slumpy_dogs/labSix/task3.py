@@ -59,7 +59,7 @@ while k > 1:
   elif j > 0 and steps[i][j - 1] == k-1:
     i, j = i, j-1
     path.append((i, j))
-    k-=1
+    k -= 1
   elif i < len(steps) - 1 and steps[i + 1][j] == k-1:
     i, j = i+1, j
     path.append((i, j))
