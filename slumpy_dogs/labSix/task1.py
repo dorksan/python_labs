@@ -1,4 +1,5 @@
-string = "()(()"
+print("Введите последовательность скобок: ")
+string = input()
 stack = []
 index = 0
 for i in range(len(string)):
