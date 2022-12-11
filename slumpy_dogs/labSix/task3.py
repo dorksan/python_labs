@@ -16,7 +16,7 @@ maze = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 start = 7, 0
 end = 7, 14
 length = len(maze)
-steps = [ [0]*length for i in range(length)]
+steps = [[0]*length for i in range(length)]
 i, j = start
 steps[i][j] = 1
 
@@ -32,6 +32,14 @@ def makeStep(k):
             steps[i+1][j] = k + 1
         if j < len(steps[i])-1 and steps[i][j+1] == 0 and maze[i][j+1] == 0:
            steps[i][j+1] = k + 1
+
+def outputPathToExit(path):
+    wayToExit = [[1]*length for i in range(length)]
+    for i in range(len(path)):
+        a, b = path[i]
+        wayToExit[a][b] = 0
+    for line in wayToExit:
+        print(*line)
 
 k = 0
 while steps[end[0]][end[1]] == 0:
@@ -58,4 +66,4 @@ while k > 1:
     i, j = i, j+1
     path.append((i, j))
     k -= 1
-print(path)
+outputPathToExit(path)
