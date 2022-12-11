@@ -1,4 +1,4 @@
-import seaborn as sns; sns.set()
+import seaborn as sns
 import matplotlib.pyplot as plt
 
 maze = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -70,7 +70,11 @@ while k > 1:
     k -= 1
 
 data = outputWayToExit(path)
-ax = sns.heatmap(data, annot=True, fmt="d", cbar=None, xticklabels=False, yticklabels=False)
-plt.title("Визуализация массива",fontsize=12)
+ax = sns.heatmap(maze, annot=True, fmt="d", cbar=None, xticklabels=False, yticklabels=False, cmap="Greens_r", vmin=-0.3, vmax=1.3)
+plt.title("Лабиринт", fontsize=18)
 plt.savefig("visualize_way_to_exit.png", bbox_inches='tight', dpi=100)
+plt.show()
+ax = sns.heatmap(data, annot=True, fmt="d", cbar=None, xticklabels=False, yticklabels=False, cmap="Greens_r", vmin=0, vmax=1.3)
+plt.title("Выход", fontsize=18)
+plt.savefig("visualize_way_to_exit1.png", bbox_inches='tight', dpi=100)
 plt.show()
