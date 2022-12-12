@@ -1,8 +1,9 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-import maze_2D
-import maze_3D
+import maze2D as m2D
+import maze3D as m3D
+import generateMaze2D as genMaze
 
 def IsNotString(string):
     try:
@@ -32,9 +33,9 @@ while IsNotExit:
             IsNotExit = False
             print("\nВы вышли из программы")
         case 1:
-
+            maze = m2D.testMaze()
         case 2:
 
         case 3:
-
+            maze = genMaze.randomMaze()
         case 4:
