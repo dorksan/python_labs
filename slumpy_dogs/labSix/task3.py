@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 
 import maze2D as m2D
 import maze3D as m3D
-import generateMaze2D as genMaze
+import generateMaze2D as genMaze2D
+import generateMaze3D as genMaze3D
 
 def IsNotString(string):
     try:
@@ -33,9 +34,14 @@ while IsNotExit:
             IsNotExit = False
             print("\nВы вышли из программы")
         case 1:
-            maze = m2D.testMaze()
+            m2D.testMaze2D()
         case 2:
-
+            m3D.testMaze3D()
         case 3:
-            maze = genMaze.randomMaze()
+            maze = genMaze2D.randomMaze()
+            genMaze2D.printMaze(maze)
+            m2D.maze2D(maze)
         case 4:
+            maze = genMaze3D.randomMaze()
+            genMaze3D.printMaze(maze)
+            m3D.maze3D(maze)
